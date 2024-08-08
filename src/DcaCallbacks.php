@@ -165,6 +165,7 @@ class DcaCallbacks extends \Contao\Backend
                                                         case 'image':
                                                         case 'picture':
                                                         case 'file':
+															$objFiles = null;
                                                             if (\Contao\Validator::isUuid($value)) {
                                                                 // Handle UUIDs
                                                                 $objFiles = \Contao\FilesModel::findByUuid($value);
