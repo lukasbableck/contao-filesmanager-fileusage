@@ -44,7 +44,7 @@ class DcaCallbacks extends \Contao\Backend
                         continue;
                     }
                     \Contao\Controller::loadDataContainer($table);
-                    if (is_array($GLOBALS['TL_DCA'][$table]['fields']) && count($GLOBALS['TL_DCA'][$table]['fields']) > 0) foreach ($GLOBALS['TL_DCA'][$table]['fields'] as $field => $column) {
+                    if (array_key_exists($table, $GLOBALS['TL_DCA']) && is_array($GLOBALS['TL_DCA'][$table]['fields']) && count($GLOBALS['TL_DCA'][$table]['fields']) > 0) foreach ($GLOBALS['TL_DCA'][$table]['fields'] as $field => $column) {
                         if (!isset($column['sql']) || !isset($column['inputType'])) {
                             continue;
                         }
